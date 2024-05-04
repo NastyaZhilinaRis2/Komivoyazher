@@ -74,7 +74,10 @@ namespace Komivoyazhor {
 
 	private: System::Windows::Forms::Button^ btn_input;
 	private: System::Windows::Forms::TextBox^ TB_input;
-	private: System::Windows::Forms::Label^ label_consol;
+
+
+	private: System::Windows::Forms::TextBox^ textBox_console;
+
 
 
 
@@ -128,9 +131,9 @@ namespace Komivoyazhor {
 			this->label_resultat = (gcnew System::Windows::Forms::Label());
 			this->btn_output_result = (gcnew System::Windows::Forms::Button());
 			this->panel_dialogWithPilzovatel = (gcnew System::Windows::Forms::Panel());
+			this->textBox_console = (gcnew System::Windows::Forms::TextBox());
 			this->btn_input = (gcnew System::Windows::Forms::Button());
 			this->TB_input = (gcnew System::Windows::Forms::TextBox());
-			this->label_consol = (gcnew System::Windows::Forms::Label());
 			this->panel_menu->SuspendLayout();
 			this->panel_dialogWithPilzovatel->SuspendLayout();
 			this->SuspendLayout();
@@ -306,22 +309,36 @@ namespace Komivoyazhor {
 			// 
 			this->panel_dialogWithPilzovatel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->panel_dialogWithPilzovatel->Controls->Add(this->textBox_console);
 			this->panel_dialogWithPilzovatel->Controls->Add(this->btn_input);
-			this->panel_dialogWithPilzovatel->Controls->Add(this->label_consol);
 			this->panel_dialogWithPilzovatel->Controls->Add(this->TB_input);
-			this->panel_dialogWithPilzovatel->Location = System::Drawing::Point(1025, 12);
+			this->panel_dialogWithPilzovatel->Location = System::Drawing::Point(1016, 14);
 			this->panel_dialogWithPilzovatel->Name = L"panel_dialogWithPilzovatel";
-			this->panel_dialogWithPilzovatel->Size = System::Drawing::Size(329, 675);
+			this->panel_dialogWithPilzovatel->Size = System::Drawing::Size(338, 673);
 			this->panel_dialogWithPilzovatel->TabIndex = 16;
+			// 
+			// textBox_console
+			// 
+			this->textBox_console->BackColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->textBox_console->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox_console->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->textBox_console->ForeColor = System::Drawing::SystemColors::Window;
+			this->textBox_console->Location = System::Drawing::Point(3, 6);
+			this->textBox_console->Multiline = true;
+			this->textBox_console->Name = L"textBox_console";
+			this->textBox_console->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->textBox_console->Size = System::Drawing::Size(332, 433);
+			this->textBox_console->TabIndex = 0;
 			// 
 			// btn_input
 			// 
 			this->btn_input->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->btn_input->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btn_input->Location = System::Drawing::Point(3, 625);
+			this->btn_input->Location = System::Drawing::Point(3, 623);
 			this->btn_input->Name = L"btn_input";
-			this->btn_input->Size = System::Drawing::Size(323, 47);
+			this->btn_input->Size = System::Drawing::Size(332, 47);
 			this->btn_input->TabIndex = 17;
 			this->btn_input->Text = L"¬вод";
 			this->btn_input->UseVisualStyleBackColor = true;
@@ -331,24 +348,12 @@ namespace Komivoyazhor {
 			this->TB_input->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->TB_input->BackColor = System::Drawing::SystemColors::Window;
 			this->TB_input->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->TB_input->Location = System::Drawing::Point(3, 447);
+			this->TB_input->Font = (gcnew System::Drawing::Font(L"Arial", 12));
+			this->TB_input->Location = System::Drawing::Point(3, 445);
 			this->TB_input->Multiline = true;
 			this->TB_input->Name = L"TB_input";
-			this->TB_input->Size = System::Drawing::Size(323, 172);
+			this->TB_input->Size = System::Drawing::Size(332, 172);
 			this->TB_input->TabIndex = 16;
-			// 
-			// label_consol
-			// 
-			this->label_consol->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
-			this->label_consol->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->label_consol->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label_consol->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label_consol->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->label_consol->Location = System::Drawing::Point(3, 2);
-			this->label_consol->Name = L"label_consol";
-			this->label_consol->Size = System::Drawing::Size(323, 442);
-			this->label_consol->TabIndex = 15;
 			// 
 			// MainForm
 			// 

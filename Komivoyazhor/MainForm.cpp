@@ -74,7 +74,7 @@ System::Void Komivoyazhor::MainForm::panel_uzlov_Paint(System::Object^ sender, S
         AddGrafs(700, 220);
         AddGrafs(240, 330);
         AddGrafs(210, 590);
-        AddGrafs(350, 95);
+        AddGrafs(350, 100);
         AddGrafs(820, 550);
         load = false;
         AddLines(4 - 1, 1 - 1, 5); //вес между 4 и 1
@@ -124,7 +124,8 @@ System::Void Komivoyazhor::MainForm::AddLocationGrafs(int x, int y)
     }
     else
     {
-        LocationGrafs.insert(LocationGrafs.begin() + indexPust, Temp);
+        LocationGrafs[indexPust][0] = x;
+        LocationGrafs[indexPust][1] = y;
         TextOnGrafs(x, y, indexPust + 1);
     }
     
@@ -231,12 +232,45 @@ System::Void Komivoyazhor::MainForm::AddLocationLines(int x, int y, int indexGra
     Temp2.push_back(Temp);
     std::vector<std::vector<std::vector<int>>> Temp3;
     Temp3.push_back(Temp2);
-    if (indexPust == -1) LocationLines.push_back(Temp3);
-    else LocationLines.insert(LocationLines.begin() + indexPust, Temp3);
+    if (indexPust == -1)
+    {
+        LocationLines.push_back(Temp3);
+        matrixPytei[indexGraf1][indexGraf2] = LocationLines.size() - 1;
+        matrixPytei[indexGraf2][indexGraf1] = LocationLines.size() - 1;
+        for (int i = 0; i < NumGrafs; i++)
+        {
+            if(matrixPytei[NumGrafs - 1][i] == 0)
+            matrixPytei[NumGrafs-1][i] = -1;
+        }
+        for (int i = 0; i < NumGrafs; i++)
+        {
+            if (matrixPytei[i][NumGrafs - 1] == 0)
+            matrixPytei[i][NumGrafs - 1] = -1;
+        }
+    }
+        
+    else
+    {
+        LocationLines[indexPust][0][0][0] = x;
+        LocationLines[indexPust][0][0][1] = y;
+        LocationLines[indexPust][0][1][0] = indexGraf1;
+        LocationLines[indexPust][0][1][1] = indexGraf2;
+        matrixPytei[indexGraf1][indexGraf2] = indexPust;
+        matrixPytei[indexGraf2][indexGraf1] = indexPust;
+    }
     
     Temp.clear();
-    matrixPytei[indexGraf1][indexGraf2] = LocationLines.size() - 1;
-    matrixPytei[indexGraf2][indexGraf1] = LocationLines.size() - 1;
+    for (int i = 0; i < NumGrafs; i++)
+    {
+        for (int j = 0; j < NumGrafs; j++)
+        {
+            textBox_console->Text += String::Format("{0,6:F3}", matrixPytei[i][j] + "  ");
+            
+        }
+        textBox_console->Text += "\r\n";
+    }
+    textBox_console->Text += "\r\n";
+    
     NumLines++;
 }
 
@@ -355,14 +389,14 @@ System::Void Komivoyazhor::MainForm::deleteGraf(int x, int y, int indexGrafDelet
     NumGrafs--;
 
 }
-System::Void Komivoyazhor::MainForm::deleteLine(int indexGraf1, int indexGraf2, int indexLine)
+System::Void Komivoyazhor::MainForm::deleteLine(int indexGraf1, int indexGraf2, int indexLineDelete)
 {
     Graphics^ g;
     MyPensil myPensil;
     g = this->panel_uzlov->CreateGraphics();
 
-    int polovinaX = WeighttGraf / 2, polovinaY = HeightGraf / 2;
-    int X1 = LocationGrafs[indexGraf1][0] + polovinaX,
+    double polovinaX = WeighttGraf / 2, polovinaY = HeightGraf / 2;
+    double X1 = LocationGrafs[indexGraf1][0] + polovinaX,
         Y1 = LocationGrafs[indexGraf1][1] + polovinaY,
         X2 = LocationGrafs[indexGraf2][0] + polovinaX,
         Y2 = LocationGrafs[indexGraf2][1] + polovinaY;
@@ -379,24 +413,25 @@ System::Void Komivoyazhor::MainForm::deleteLine(int indexGraf1, int indexGraf2, 
     MAX_LINE_LENGTH = lineLength - WeighttGraf / 2;
     X1 = X2 - (X2 - X1) / lineLength * MAX_LINE_LENGTH;
     Y1 = Y2 - (Y2 - Y1) / lineLength * MAX_LINE_LENGTH;
-    g->DrawLine(myPensil.MyPen, X1, Y1, X2, Y2);
+    g->DrawLine(myPensil.MyPen, (int)X1, (int)Y1, (int)X2, (int)Y2);
 
     //заменим в локации линий данные данной линии на -1
-    LocationLines[indexLine][0][0][0] =
-    LocationLines[indexLine][0][0][1] =
-    LocationLines[indexLine][0][1][0] =
-    LocationLines[indexLine][0][1][1] = -1;
+    LocationLines[indexLineDelete][0][0][0] =
+    LocationLines[indexLineDelete][0][0][1] =
+    LocationLines[indexLineDelete][0][1][0] =
+    LocationLines[indexLineDelete][0][1][1] = -1;
     //заменим на -1 в матрице
     for (int i = 0; i < NumGrafs; i++)
     {
         for (int j = 0; j < NumGrafs; j++)
         {
-            if (matrixPytei[i][j] == indexLine)
+            if (matrixPytei[i][j] == indexLineDelete)
             {
                 matrixPytei[i][j] = -1;
             }
         }
     }
+    NumLines--;
 }
 
 System::Void Komivoyazhor::MainForm::btnLine_MouseClick(System::Object^ sender, System::EventArgs^ e)
@@ -408,16 +443,16 @@ System::Void Komivoyazhor::MainForm::btnLine_MouseClick(System::Object^ sender, 
         Controls->Remove(b);
         b->Visible = false;
 
-        for (int i = 0; i < NumLines; i++)
+        for (int i = 0; i < LocationLines.size(); i++)
         {
             if (LocationLines[i][0][0][0] == b->Location.X && LocationLines[i][0][0][1] == b->Location.Y)
             {
                 indexGraf1 = LocationLines[i][0][1][0];
                 indexGraf2 = LocationLines[i][0][1][1];
                 deleteLine(indexGraf1, indexGraf2, i);
+                break;
             }
         }
-        NumLines--;
     }
     if (btn_RedactVesRebro->Checked == true)
     {
