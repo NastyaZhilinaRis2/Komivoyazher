@@ -1,0 +1,15 @@
+﻿  MainForm.cpp
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(108,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(171,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(172,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(176,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(177,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(212,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(301,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(308,35): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(375,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(376,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(380,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(381,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  MainForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  Komivoyazhor.vcxproj -> C:\Users\Настя\source\repos\Komivoyazhor\Release\Komivoyazhor.exe

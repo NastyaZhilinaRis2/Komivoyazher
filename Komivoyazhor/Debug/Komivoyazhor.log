@@ -1,0 +1,12 @@
+﻿  MainForm.cpp
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(39,78): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(155,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(156,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(160,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(161,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(282,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(283,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(287,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(288,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  MainForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  Komivoyazhor.vcxproj -> C:\Users\Настя\source\repos\Komivoyazhor\Debug\Komivoyazhor.exe
