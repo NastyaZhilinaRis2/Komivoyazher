@@ -2,3 +2,7 @@ C:\Users\Настя\source\repos\Komivoyazhor\Release\Komivoyazhor.vcxproj.Assem
 C:\Users\Настя\source\repos\Komivoyazhor\Release\Komivoyazhor.MainForm.resources
 C:\Users\Настя\source\repos\Komivoyazhor\Release\Komivoyazhor.vcxproj.GenerateResource.cache
 C:\Users\Настя\source\repos\Komivoyazhor\Release\Komivoyazhor.exe
+C:\Users\Настя\Documents\GitHub\Komivoyazher\Komivoyazhor\Release\Komivoyazhor.vcxproj.AssemblyReference.cache
+C:\Users\Настя\Documents\GitHub\Komivoyazher\Komivoyazhor\Release\Komivoyazhor.MainForm.resources
+C:\Users\Настя\Documents\GitHub\Komivoyazher\Komivoyazhor\Release\Komivoyazhor.vcxproj.GenerateResource.cache
+C:\Users\Настя\Documents\GitHub\Komivoyazher\Komivoyazhor\Release\Komivoyazhor.exe

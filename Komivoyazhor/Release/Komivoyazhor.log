@@ -1,12 +1,1 @@
-﻿  MainForm.cpp
-C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(108,27): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(172,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(173,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(177,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(178,13): warning C4244: =: преобразование "double" в "int", возможна потеря данных
-C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(213,27): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(335,27): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(342,35): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Настя\source\repos\Komivoyazhor\MainForm.cpp(446,27): warning C4018: <: несоответствие типов со знаком и без знака
-  MainForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  Komivoyazhor.vcxproj -> C:\Users\Настя\source\repos\Komivoyazhor\Release\Komivoyazhor.exe
+﻿  Komivoyazhor.vcxproj -> C:\Users\Настя\Documents\GitHub\Komivoyazher\Komivoyazhor\Release\Komivoyazhor.exe

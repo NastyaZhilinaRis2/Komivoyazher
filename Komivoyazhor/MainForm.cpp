@@ -442,7 +442,7 @@ System::Void Komivoyazhor::MainForm::btnLine_MouseClick(System::Object^ sender, 
     {
         Controls->Remove(b);
         b->Visible = false;
-
+        sender->
         for (int i = 0; i < LocationLines.size(); i++)
         {
             if (LocationLines[i][0][0][0] == b->Location.X && LocationLines[i][0][0][1] == b->Location.Y)
